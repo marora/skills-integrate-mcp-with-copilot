@@ -8,11 +8,15 @@
   </head>
   <body>
     <header>
+      <button id="account-button" class="account-button" type="button" aria-label="Teacher login">
+        👤 Teacher login
+      </button>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
     </header>
 
     <main>
+      <p id="auth-status" class="auth-status" aria-live="polite"></p>
       <section id="activities-container">
         <h3>Available Activities</h3>
         <div id="activities-list">
@@ -40,6 +44,27 @@
         <div id="message" class="hidden"></div>
       </section>
     </main>
+
+    <dialog id="login-dialog" aria-labelledby="login-title">
+      <form id="login-form">
+        <h3 id="login-title">Teacher login</h3>
+        <label for="teacher-username">Username</label>
+        <input id="teacher-username" name="username" autocomplete="username" required />
+        <label for="teacher-password">Password</label>
+        <input
+          id="teacher-password"
+          name="password"
+          type="password"
+          autocomplete="current-password"
+          required
+        />
+        <div class="dialog-actions">
+          <button type="submit">Log in</button>
+          <button id="cancel-login" class="secondary-button" type="button">Cancel</button>
+        </div>
+        <p id="login-message" class="hidden" role="alert"></p>
+      </form>
+    </dialog>
 
     <footer>
       <p>&copy; 2026 Mergington High School</p>
